@@ -27,6 +27,7 @@
 | **Theme** | A prisoner with a hidden crime escapes death row and washes ashore in a new land. Their past is a ghost that follows them—they can confess, hide, or embrace it. |
 | **Visual Style** | "Theater of the Mind" — silhouettes for 90% of scenes, fully rendered AI images for major moments. |
 | **Core Question** | *What do you do when you have a second chance at life—but you don't deserve it?* |
+| **Name Origin** | Greek and Latin inspired names (Khionia = snow, Rhizoma = root, Arenia = sand/gold, Helos = marsh/swamp) |
 
 ---
 
@@ -118,22 +119,22 @@ You are sucked into an underground current after the kraken attack. You wake up 
 A girl is picking glowing mushrooms nearby—**Thalloa**. She observes you cautiously. She tells you to follow her. She'll get you a job from her master.
 
 **The Setup:**
-You end up as the **second assistant to the royal chef**. You learn about Rhizoma's ingredients—roots, fungi, tree-sap, glowing herbs. The cooking is simple, traditional, and repetitive.
+You end up as the **assistant to a merchant**. You learn about Rhizoma's goods—fungi, amber, root-essence, medicinal herbs. The work is simple, repetitive, and safe.
 
 **The Change:**
-You are the first person to cook **differently**. Using techniques and flavors no one in Rhizoma has ever seen—from your old life, from other kingdoms, from memory fragments. The food catches attention.
+You are the first person to trade **differently**. Using negotiation techniques, product knowledge, and strategies no one in Rhizoma has ever seen—from your old life, from other kingdoms, from memory fragments. The merchant notices. The guild takes interest.
 
 **The Complication:**
-You accidentally use a **poison mushroom**. You collapse. You're dying. Thalloa begs her master chef to save you. He does—but now you owe him your life. He wants to use your skills for his own ambitions.
+You accidentally trade a **poisonous mushroom** to a noble family. The noble falls ill. You're blamed. Thalloa begs her master to protect you. He does—but now you owe him your life. He wants to use your skills for his own ambitions.
 
 **The Question:**
-You've changed Rhizoma with a single meal. What happens when you change something *more*?
+You've changed Rhizoma with a single trade. What happens when you change something *more*?
 
 ### The Love Interest: Thalloa
 
 | Aspect | Description |
 |--------|-------------|
-| **Role** | Root-gatherer, lowest caste, assistant to the chef |
+| **Role** | Root-gatherer, lowest caste, assistant to the merchant |
 | **Surface** | Quiet, cautious, used to being invisible |
 | **Reality** | She can hear the tree. She's always been able to. She thought everyone could. |
 | **Arc** | From root-gatherer → rebel → healer → leader |
@@ -144,7 +145,7 @@ You've changed Rhizoma with a single meal. What happens when you change somethin
 
 | Name | Role | Notes |
 |------|------|-------|
-| **Master Chef** | The royal chef | He saves you. Now he owns you. He wants to use your skills for his ambitions. |
+| **Master Merchant** | The merchant | He saves you. Now he owns you. He wants to use your skills for his ambitions. |
 | **The Canopy Lord** | Ruler of the canopy-dwellers | He's draining the tree's essence to keep his gardens alive. The rot is his doing. |
 
 ### The Relic: Heartwood Seed
@@ -184,13 +185,13 @@ She finds you first. A figure in battered leather, sand-caked boots, a sword at 
 You breathe. She holds you at sword point. You talk fast—ridiculous reasons fall out of your mouth. She laughs. It's sharp and hollow.
 
 **The Collar:**
-She snaps a worn leather collar around your neck. You are her slave. You carry her supplies. You hold her horse.
+She snaps an **iron slave collar** around your neck. It's heavy, cold, and degrading. You are her property. You carry her supplies. You hold her horse. The collar is a constant reminder: *you belong to her.*
 
 **The Unspoken Truth:**
-You are the first person she hasn't killed in years. The first person she's talked to for more than a few words. The first person who's made her laugh.
+You are the first person she hasn't killed in years. The first person she's talked to for more than a few words. The first person who's made her laugh. She won't say it—but the collar is also her way of keeping you close.
 
 **The Future:**
-You are a slave. But you are also the only companion the Falcon of the West has ever had. The slow rise is inevitable. You'll earn her respect. You'll earn your freedom.
+You are a slave. But you are also the only companion the Falcon of the West has ever had. The slow rise is inevitable. You'll earn her respect. You'll earn your freedom. And when the collar comes off... it will mean something.
 
 ### The Love Interest: Aurea (The Falcon of the West)
 
@@ -240,10 +241,10 @@ You wash up in a marsh. Alligators surround you. You're too weak to fight.
 **The First Encounter:**
 A bolt of purple light shoots past your head. The alligators scatter. A girl emerges from the mist—**Sidea**. She's young. Barely out of her teens. She saved you—not out of kindness, but because she wants a test subject.
 
-**The Collar (Magical Version):**
-She waves her staff. A binding spell wraps around your wrist. You can't leave. She grins.
+**The Binding Spell (Not a Physical Collar):**
+She waves her staff. A binding spell wraps around your wrist—a **curse**, not a collar. It's glowing, cold, and whispers in your ear at night. It's not a physical chain—it's a magical compulsion. You can't leave her side. You can't hurt her. But unlike the collar, this one might actually kill you if she doesn't learn to control it.
 
-> *"There. Now you can't leave. Don't worry—it's not permanent. Probably."*
+> *"There. Now you can't leave. Don't worry—it's not permanent. Probably. I haven't figured out how to undo it yet."*
 
 **The Magic:**
 Sidea is an *enthusiastic* witch. She knows the words, but not the consequences. Her spells go hilariously wrong:
@@ -253,10 +254,10 @@ Sidea is an *enthusiastic* witch. She knows the words, but not the consequences.
 - Making you stronger → You can only speak in rhymes for a week.
 
 **The Bond:**
-She's lonely. She's been alone in the swamp for years. You're not just a test subject—you're the first person she's had to talk to in a long time.
+She's lonely. She's been alone in the swamp for years. You're not just a test subject—you're the first person she's had to talk to in a long time. She doesn't say it, but the binding spell wasn't just to keep you close. It was to keep you *with* her.
 
 **The Future:**
-You're trapped. You're mutated. You're her test subject. But when the swamp's true dangers reveal themselves, she'll risk everything to save you—even if her magic makes it worse before it gets better.
+You're trapped. You're mutated. You're her test subject. But when the swamp's true dangers reveal themselves, she'll risk everything to save you—even if her magic makes it worse before it gets better. And when the binding spell eventually breaks... will you stay?
 
 ### The Love Interest: Sidea
 
@@ -299,17 +300,19 @@ The player might find pieces of its history. A ruin in the Ice Caves. A carving 
 
 ## The Player's Crime
 
-**Fixed. Hidden. Central to the story.**
+**Fixed. Hidden. Central to the story. Ambiguous by design.**
 
-| Option | Crime | Tone |
-|--------|-------|------|
-| **Regicide** | You killed a king. | Political, tragic, heavy |
-| **Betrayal** | You sold out your own people. | Moral grey, haunting |
-| **Heresy** | You killed a god—or something like a god. | Spiritual, philosophical |
-| **Infanticide** | You killed a child. | Dark, unforgivable |
-| **Nothing** | You are innocent. You were framed. | The twist |
+The player is not a monster. Whatever they did, it was not born of pure evil. It was a mistake, a moment of weakness, a choice made in desperation. The player will discover the truth gradually—and when they do, they will have to decide: confess, hide, or embrace it.
 
-**Note:** The crime is the same in every kingdom. The player discovers it—or hides it—through their choices.
+| Possibility | Tone |
+|-------------|------|
+| **Regicide** | Political, tragic, heavy — you killed a king, but perhaps there was a reason. |
+| **Betrayal** | Moral grey, haunting — you sold out your people, but perhaps you were trying to save someone. |
+| **Heresy** | Spiritual, philosophical — you killed a god, but perhaps the god deserved it. |
+| **Accident** | Tragic, human — you caused a death, but you never meant to. |
+| **Innocence** | The twist — you were framed. You never committed the crime. |
+
+**The key is ambiguity.** The crime is never fully explained in a single scene. It surfaces through nightmares, memories, NPC reactions, and the player's own choices. The player is not a monster—but they have done something they must answer for.
 
 ---
 
@@ -327,12 +330,12 @@ The player might find pieces of its history. A ruin in the Ice Caves. A carving 
 
 ## Quick Reference: The Love Interests
 
-| Kingdom | Love Interest | Title | Vibe |
-|---------|---------------|-------|------|
-| Khionia | Princess Asteria | The Frostbound Princess | Cold, sharp, grieving |
-| Rhizoma | Thalloa | The Root-Gatherer | Warm, hopeful, vulnerable |
-| Arenia | Aurea | The Falcon of the West | Cynical, scarred, loyal |
-| Helos | Sidea | The Young Witch | Chaotic, lonely, eager |
+| Kingdom | Love Interest | Title | Vibe | The "Collar" |
+|---------|---------------|-------|------|--------------|
+| Khionia | Princess Asteria | The Frostbound Princess | Cold, sharp, grieving | Political obligation (engagement to a cruel Jarl) |
+| Rhizoma | Thalloa | The Root-Gatherer | Warm, hopeful, vulnerable | Debt to the merchant (life owed) |
+| Arenia | Aurea | The Falcon of the West | Cynical, scarred, loyal | Physical iron/leather slave collar |
+| Helos | Sidea | The Young Witch | Chaotic, lonely, eager | Magical binding spell (curse) |
 
 ---
 
