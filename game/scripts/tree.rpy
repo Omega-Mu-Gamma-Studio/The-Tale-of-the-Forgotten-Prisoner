@@ -60,6 +60,24 @@ label rhizoma_incident:
 
     "The guild wants blood. Yours, specifically."
 
+    menu:
+        "Take responsibility. It was your hands that served it.":
+            $ reckoning_adjust("confess")
+            $ rp_adjust("thalloa", 1)
+
+            "'It was me,' you say, before anyone else can decide the story for you. 'My hands. My mistake. Nobody else's.'"
+
+            "It doesn't make the guild elders any less furious. But Thalloa's expression shifts — something between relief and worry, like she'd braced for you to be someone smaller than that."
+
+        "Say no one taught you the difference. Let the blame land elsewhere.":
+            $ reckoning_adjust("hide")
+            $ rp_adjust("merchant", 1)
+            $ rp_adjust("thalloa", -1)
+
+            "'Nobody told me,' you say. It's even true. 'How was I supposed to know?' The guild elders' attention drifts, just slightly, toward the merchant who trained you and never once mentioned the difference."
+
+            "Thalloa doesn't say anything. She doesn't have to — the look on her face makes it clear she noticed exactly what you just did, and exactly who it cost."
+
     thalloa "He didn't do it on purpose! He's still learning our roots, he's still—"
 
     "She's shouting at her own master now, in front of guild elders, in front of everyone. You've never once seen her raise her voice."

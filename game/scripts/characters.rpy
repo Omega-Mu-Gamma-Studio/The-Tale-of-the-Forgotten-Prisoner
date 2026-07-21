@@ -40,3 +40,66 @@ default response = None
 
 # The kingdom the player ends up in: "khionia", "rhizoma", "arenia", or "helos".
 default kingdom = None
+
+
+# --- The Reckoning (confess / hide / embrace) ---
+# Per PREMISES.md: when the player eventually learns the truth of their
+# crime, they have to decide whether to confess it, hide from it, or
+# embrace it. That's not one choice at the end — it's the sum of how the
+# player has been handling truth and blame all game, across every kingdom.
+# Nudge this at any morally-loaded choice point, in any route, well before
+# the player consciously knows what it's building toward.
+default reckoning = {
+    "confess": 0,
+    "hide": 0,
+    "embrace": 0,
+}
+
+# --- Relationship Points (RP) ---
+# One entry per NPC/LI currently written into the story. This is a starting
+# roster, not a ceiling — use rp_adjust() below for anyone new so a writer
+# can reference a brand-new NPC without having to edit this dict first.
+default relationship = {
+    # Khionia
+    "asteria": 0,
+    "valerius": 0,
+    "leontios": 0,
+    "chef": 0,
+    # Rhizoma
+    "thalloa": 0,
+    "merchant": 0,
+    # Arenia
+    "aurea": 0,
+    # Helos
+    "sidea": 0,
+}
+
+init python:
+
+    def rp_adjust(npc, amount):
+        """Nudge relationship points for any NPC, current or future.
+        Auto-creates the entry at 0 if it isn't in the dict yet, so new
+        NPCs don't require touching this file first.
+        Usage: $ rp_adjust("asteria", 1)
+        """
+        relationship[npc] = relationship.get(npc, 0) + amount
+
+    def reckoning_adjust(kind, amount=1):
+        """Nudge the confess/hide/embrace tracker.
+        kind must be one of "confess", "hide", "embrace".
+        Usage: $ reckoning_adjust("hide")
+        """
+        if kind not in reckoning:
+            raise Exception("reckoning_adjust: unknown kind '%s' — must be confess, hide, or embrace" % kind)
+        reckoning[kind] += amount
+
+    def reckoning_leaning():
+        """Returns the currently-dominant tendency as a string. Used at the
+        convergence/ending stage to help shape which ending the player is
+        heading toward. Ties favor 'hide', then 'embrace', then 'confess' —
+        on the theory that silence is the easiest default to fall into."""
+        top = max(reckoning.values())
+        for key in ("hide", "embrace", "confess"):
+            if reckoning[key] == top:
+                return key
+        return "hide"

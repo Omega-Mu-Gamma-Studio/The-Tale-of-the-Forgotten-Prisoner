@@ -56,7 +56,25 @@ label helos_incident:
 
     sidea "...Sorry. You probably don't want the full history of everyone who's ever refused to teach me anything. I just — don't really get to talk. Out here."
 
-    "It's the first honest thing she's said since the alligators. You almost tell her about the ship, about the chains, about the thing you can't quite remember doing — and then you don't, because the binding spell chooses that exact moment to hum warm against your wrist, like it's listening too."
+    "It's the first honest thing she's said since the alligators. Something about it loosens your own tongue, just slightly."
+
+    menu:
+        "Tell her something true — the ship, the chains, the crime you can't quite remember.":
+            $ reckoning_adjust("confess")
+            $ rp_adjust("sidea", 1)
+
+            "You tell her. Not all of it — you don't have all of it to give — but the ship, the chains, the shape of a crime you can't quite name. It's the first time you've said any of it out loud since it happened."
+
+            sidea "...Huh. Okay. That's a lot heavier than 'don't really get to talk out here,' but I asked for honesty, so. Thank you. For trusting me with it."
+
+            "She doesn't push for more. That, somehow, makes it easier to have said anything at all."
+
+        "Say nothing. Let the moment pass.":
+            $ reckoning_adjust("hide")
+
+            "You almost tell her. The words get as far as your throat before you swallow them back down, and the moment passes the way moments do — quietly, without either of you acknowledging it happened."
+
+            "The binding spell chooses that exact moment to hum warm against your wrist, like it noticed too."
 
     "That night, you wake to her sitting bolt upright at the edge of the hummock, staff gripped white-knuckled, staring out into mist that has gone very, very quiet."
 

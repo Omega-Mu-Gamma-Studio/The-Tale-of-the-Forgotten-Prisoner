@@ -36,11 +36,26 @@ label arenia_incident:
 
     aurea "There. Now you're mine. Try to run and I'll assume you'd rather I'd left you for the sand."
 
-    "You test the collar anyway, once, quietly, when she isn't looking. It doesn't budge. Neither does she, when she catches you at it."
+    menu:
+        "Test the collar the moment her back is turned.":
+            $ reckoning_adjust("embrace")
+            $ rp_adjust("aurea", -1)
 
-    aurea "Don't. I've killed men for less insulting attempts than that."
+            "You test it anyway, once, quietly, when she isn't looking. It doesn't budge. Neither does she, when she catches you at it."
 
-    "You believe her. Everyone believes her — it's the whole reason the Falcon of the West walks this desert without an escort, and nobody's ever stupid enough to test it."
+            aurea "Don't. I've killed men for less insulting attempts than that."
+
+            "You believe her completely. It doesn't stop you from testing it — some part of you has already decided that surviving means never fully trusting the hand that spared you."
+
+        "Stay still. Don't give her a reason.":
+            $ reckoning_adjust("hide")
+            $ rp_adjust("aurea", 1)
+
+            "You don't test it. Not once. Whatever's coming, you decide, it isn't worth finding out the hard way what she meant by 'insulting attempts.'"
+
+            aurea "Smart. Most people try it in the first hour. You'd be surprised how few make it to the second."
+
+    "Everyone believes her — it's the whole reason the Falcon of the West walks this desert without an escort, and nobody's ever stupid enough to test it, not twice."
 
     "So you carry her supplies. You hold her horse. You learn, fast, which questions get answered and which ones earn a look that ends the conversation permanently."
 

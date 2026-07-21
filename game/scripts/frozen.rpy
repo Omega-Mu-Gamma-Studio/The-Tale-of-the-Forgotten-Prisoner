@@ -73,9 +73,31 @@ label khionia_incident:
 
     valerius "Poison rarely announces itself, unfortunately. But this stranger—' he looks at you, and something in his expression settles into place like a lock turning, '—this stranger knocked the tureen from his hands before a single spoonful reached the table. Divine timing, wouldn't you say? Or divine intervention."
 
-    "You don't know what to say to that. You didn't save anyone. You fell down a wet staircase because your legs still don't work right."
+    "You didn't save anyone. You fell down a wet staircase because your legs still don't work right. Everyone in this hall is about to believe a lie, and you're the only one who knows it."
 
-    "Nobody asks you to correct him."
+    menu:
+        "Speak up. Tell them the truth — you tripped, nothing more.":
+            $ reckoning_adjust("confess")
+            $ rp_adjust("leontios", 1)
+            $ rp_adjust("valerius", -1)
+
+            "You open your mouth before you've decided to. 'I didn't save anyone. I fell. That's all that happened — I don't know anything about poison, or vials, or—'"
+
+            leontios "You're certain of this."
+
+            "You are. It's the one thing in this entire castle you're certain of."
+
+            valerius "An admirably honest instinct, for a stranger. Though I wonder if honesty is a luxury you can afford, given how little anyone here knows about you."
+
+            "He says it lightly. It doesn't feel light. But the King's eyes stay on you a moment longer than they need to — weighing something."
+
+        "Say nothing. Let them believe what's convenient.":
+            $ reckoning_adjust("hide")
+            $ rp_adjust("valerius", 1)
+
+            "You don't know what to say to that, so you say nothing at all. Nobody asks you to correct him. Silence, it turns out, is easy to mistake for modesty."
+
+            "Lord Valerius catches your eye across the hall — the briefest flicker of something like approval — before smoothing his expression back into practiced concern."
 
     "The chef is dragged out still protesting, his voice cracking on the word innocent until a door somewhere swallows the sound of it whole."
 
