@@ -317,8 +317,10 @@ define gui.main_menu_text_xalign = 1.0
 ## components when an overlay or window is not present.
 
 ## Generic frames. Thicker borders to give the carved-wood-and-metal frame
-## art room to render its trim detail.
-define gui.frame_borders = Borders(12, 12, 12, 12)
+## art room to render its trim detail -- bumped from 12 to 20 so the
+## chain-link edge motif (prisoner/shackle theme) reads clearly rather than
+## being squeezed into a few pixels.
+define gui.frame_borders = Borders(20, 20, 20, 20)
 
 ## The frame that is used as part of the confirm screen.
 define gui.confirm_frame_borders = Borders(70, 70, 70, 70)
@@ -329,8 +331,9 @@ define gui.skip_frame_borders = Borders(28, 10, 80, 10)
 ## The frame that is used as part of the notify screen.
 define gui.notify_frame_borders = Borders(28, 10, 65, 10)
 
-## Should frame backgrounds be tiled?
-define gui.frame_tile = False
+## Should frame backgrounds be tiled? True here so the chain-link edge motif
+## repeats cleanly at any panel size instead of being stretched/distorted.
+define gui.frame_tile = True
 
 
 ## Bars, Scrollbars, and Sliders ###############################################
