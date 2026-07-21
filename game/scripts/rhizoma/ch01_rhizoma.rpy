@@ -1,8 +1,9 @@
-# tree.rpy — Rhizoma, Root of Life
+# ch01_rhizoma.rpy — Rhizoma, Root of Life — Chapter 1
 #
-# Kingdom 2. Full storyline: merchant's apprentice, Thalloa, the Canopy
-# Lord draining the Heartwood. Only the Arrival beat is written here — see
-# PREMISES.md for everything past this point.
+# Full storyline: merchant's apprentice, Thalloa, the Canopy Lord draining
+# the Heartwood. This chapter covers the Arrival + Incident beats.
+# Chapter 2 goes in ../rhizoma/ch02_rhizoma.rpy — see CHAPTER_TEMPLATE.md
+# at the repo root for the beat/choice structure every chapter should follow.
 
 define thalloa = Character("Thalloa", color="#8fbf7f")
 define merchant = Character("The Merchant", color="#c9a15a")
@@ -101,10 +102,10 @@ label rhizoma_incident:
     scene black
     with dissolve
 
-    "— End of Demo: Rhizoma route —"
+    "— End of Chapter 1: Rhizoma —"
 
     "What happens next is written in PREMISES.md, but not yet in code: a merchant with ambitions that go well past trade, a Canopy Lord slowly killing the tree everyone down here depends on, and a girl who's been able to hear that tree her whole life — telling it that you might be the reason it's still breathing at all."
 
-    "That's the next thing we build."
-
+    # Once ch02_rhizoma.rpy exists with a "label rhizoma_ch02:" at the top,
+    # replace this "return" with "jump rhizoma_ch02".
     return

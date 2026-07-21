@@ -1,8 +1,9 @@
-# sandy.rpy — Arenia, Land of Gold
+# ch01_arenia.rpy — Arenia, Land of Gold — Chapter 1
 #
-# Kingdom 3. Full storyline: enslavement to Aurea the mercenary, the slow
-# rise toward trust and freedom. Only the Arrival beat is written here —
-# see PREMISES.md for everything past this point.
+# Full storyline: enslavement to Aurea the mercenary, the slow rise toward
+# trust and freedom. This chapter covers the Arrival + Incident beats.
+# Chapter 2 goes in ../arenia/ch02_arenia.rpy — see CHAPTER_TEMPLATE.md
+# at the repo root for the beat/choice structure every chapter should follow.
 
 define aurea = Character("Aurea", color="#d1a24a")
 
@@ -76,10 +77,10 @@ label arenia_incident:
     scene black
     with dissolve
 
-    "— End of Demo: Arenia route —"
+    "— End of Chapter 1: Arenia —"
 
     "What happens next is written in PREMISES.md, but not yet in code: a slave trader who knows more about your past than he should, a cursed vein of gold buried beneath the Salt Flats, and a woman who hasn't kept anyone alive in years finding out exactly why that's starting to terrify her."
 
-    "That's the next thing we build."
-
+    # Once ch02_arenia.rpy exists with a "label arenia_ch02:" at the top,
+    # replace this "return" with "jump arenia_ch02".
     return

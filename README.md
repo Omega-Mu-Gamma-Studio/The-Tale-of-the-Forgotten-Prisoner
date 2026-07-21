@@ -12,7 +12,7 @@ You are a prisoner on a cargo ship. Your crime is sealed. Your name is forgotten
 
 Then the kraken attacks.
 
-In the chaos, you escape—but the sea does not release you gently. You wash ashore in one of four kingdoms, each with its own dangers, secrets, and temptations. The world doesn't know who you are. The world doesn't know what you've done.
+In the chaos, you escape—but the sea does not release you gently. Two panic-decisions made in the dark (what you protect, and how you meet the sea) organically funnel you into one of four kingdoms, each with its own dangers, secrets, and temptations. The world doesn't know who you are. The world doesn't know what you've done.
 
 **What will you become?**
 
@@ -26,21 +26,21 @@ The choice is yours. But the past has a way of surfacing...
 
 ## 🎮 Features
 
-- **4 Distinct Kingdoms** – Each with a unique story, cast, and atmosphere:
-  - ❄️ The Frozen Kingdom of the North – Survival, sacrifice, and buried relics
-  - 🌳 The Tree Kingdom – Class struggle, rot, and ancient secrets
-  - 🏖️ The Sandy Shores – Corruption, pleasure, and gilded cages
-  - 🏚️ The Swamp Kingdom – Exiles, ghosts, and the truth you've hidden
+- **4 Distinct Kingdoms** – Each with a unique story, cast, and atmosphere, planned as a full 12-chapter route apiece:
+  - ❄️ Khionia, the Frozen Kingdom of the North – Survival, sacrifice, and buried relics
+  - 🌳 Rhizoma, the Tree Kingdom – Class struggle, rot, and ancient secrets
+  - 🏖️ Arenia, the Sandy Shores – Corruption, pleasure, and gilded cages
+  - 🏚️ Helos, the Swamp Kingdom – Exiles, ghosts, and the truth you've hidden
 
-- **A Hidden Past** – Your crime is fixed but unknown. Discover it—or bury it forever.
+- **A Hidden Past** – Your crime is fixed but unknown. Discover it—or bury it forever. See [Mechanics](#-mechanics) for how this is tracked under the hood.
 
 - **Silhouette Aesthetic** – Most scenes use haunting silhouettes, letting your imagination fill the gaps.
 
 - **Major Moments** – Fully rendered AI-generated images mark pivotal choices and emotional climaxes.
 
-- **Branching Narrative** – Your choices close doors. Every decision has weight.
+- **Branching Narrative** – Your choices close doors. Every decision has weight, tracked per-NPC and across your reckoning with your own crime.
 
-- **Replayability** – Four separate stories. Four distinct experiences. Each playthrough is a new journey.
+- **Replayability** – Four separate 12-chapter stories. Four distinct experiences. Each playthrough is a new journey.
 
 ---
 
@@ -55,6 +55,17 @@ This contrast creates a powerful effect: when an image appears, it *matters*.
 
 ---
 
+## ⚙️ Mechanics
+
+Two persistent trackers run underneath every route, defined in `game/scripts/characters.rpy`:
+
+- **The Reckoning** (`reckoning`) — a confess / hide / embrace tally. Nudged by morally-loaded choices in every kingdom, not chosen directly. Never shown to the player as a stat; it surfaces through nightmares, memory fragments, and NPC reactions, and eventually shapes the ending.
+- **Relationship Points** (`relationship`) — one running total per NPC/LI, nudged the same way. `rp_adjust("name", amount)` auto-creates a new NPC's entry the first time it's called, so a new character can be introduced mid-chapter without editing this file first.
+
+The player's crime itself is fixed narrative canon (not chosen or randomized) and is only ever hinted at — see `PREMISES.md` for the full breakdown of what it is and how it's meant to surface.
+
+---
+
 ## 🎭 Theme & GUI Direction
 
 This project uses a **whimsical fairytale / storybook GUI theme**:
@@ -63,7 +74,24 @@ This project uses a **whimsical fairytale / storybook GUI theme**:
 - **Frame Style:** Ornate carved wood + metal trim (dialogue box, buttons, windows)
 - **Fonts:** Blackletter (UnifrakturMaguntia) for character names, warm readable serif (PT Serif) for dialogue and interface text
 
-> **Note:** The colors and spacing are in place; the actual carved-frame art assets are still being sourced. See [Status](#-status) below.
+> **Note:** The colors and spacing are in place; the actual carved-frame art assets are still being sourced. See [Story Status](#-story-status) below.
+
+---
+
+## 🖼️ Art Direction
+
+Character and background art is planned to be AI-generated, in a **semi-realistic, painterly style** — natural but slightly stylized proportions, soft cel shading blended with painterly rendering, warm rim lighting. Deliberately not photorealistic: photoreal AI output tends to be where inconsistency and uncanny-valley artifacts (faces, hands) show up worst, and it's much harder to keep a character looking like *themselves* across dozens of generations. A painterly semi-realistic style hides those inconsistencies better while still reading as more grounded than flat cel-shaded anime.
+
+Each kingdom has an implied color identity already baked into its namebox colors, and backgrounds should follow the same palette:
+
+| Kingdom | Namebox Color | Palette Direction |
+|---------|---------------|--------------------|
+| Khionia | `#a9c9e8` | Icy blue-white |
+| Rhizoma | `#8fbf7f` | Bioluminescent green-gold |
+| Arenia | `#d1a24a` | Warm gold-terracotta |
+| Helos | `#a480c9` | Misty violet-teal |
+
+**Background reuse plan:** rather than a unique background per scene, each kingdom gets a small set of location "slots" (an exterior establishing shot, the player's living quarters, one or two key event locations, the climax location — roughly 4–6 per kingdom) reused across chapters. A day/night or lit/unlit color-grade pass on the same painting can stand in for a new beat without commissioning new art, which matters a lot at 48-chapters-of-content scale.
 
 ---
 
@@ -127,20 +155,30 @@ The-Tale-of-the-Forgotten-Prisoner/
 │   │   ├── OFL-UnifrakturMaguntia.txt   # Font license (SIL OFL 1.1)
 │   │   └── OFL-PTSerif.txt              # Font license (SIL OFL 1.1)
 │   ├── images/
-│   │   ├── silhouettes/           # Silhouette backgrounds (90% of scenes)
-│   │   ├── major_moments/         # Full AI-generated images (10% of scenes)
+│   │   ├── silhouettes/           # Silhouette backgrounds (90% of scenes) — not yet populated
+│   │   ├── major_moments/         # Full AI-generated images (10% of scenes) — not yet populated
 │   │   └── gui/                   # Custom UI assets (future)
+│   ├── script.rpy                 # Entry point — jumps straight into the prologue
 │   └── scripts/
-│       ├── prologue.rpy           # The shipwreck and escape sequence
-│       ├── frozen.rpy             # Frozen Kingdom storyline
-│       ├── tree.rpy               # Tree Kingdom storyline
-│       ├── sandy.rpy              # Sandy Shores storyline
-│       ├── swamp.rpy              # Swamp Kingdom storyline
-│       └── endings.rpy            # All possible endings
+│       ├── characters.rpy         # Shared character defs, reckoning + RP trackers
+│       ├── prologue.rpy           # The shipwreck and escape sequence (complete)
+│       ├── khionia/
+│       │   └── ch01_khionia.rpy   # Chapter 1 written; ch02–ch12 to come
+│       ├── rhizoma/
+│       │   └── ch01_rhizoma.rpy   # Chapter 1 written; ch02–ch12 to come
+│       ├── arenia/
+│       │   └── ch01_arenia.rpy    # Chapter 1 written; ch02–ch12 to come
+│       ├── helos/
+│       │   └── ch01_helos.rpy     # Chapter 1 written; ch02–ch12 to come
+│       └── endings.rpy            # Convergence/epilogues — not yet created
+├── CHAPTER_TEMPLATE.md             # Per-chapter beat/choice template for all 48 chapter files
+├── PREMISES.md                     # Full world, kingdom, and crime lore reference
 ├── make_backgrounds.py            # Script used to generate placeholder art
 ├── .gitignore
 └── README.md
 ```
+
+Each kingdom is planned as a full 12-chapter route (48 chapter files total across all four). See `CHAPTER_TEMPLATE.md` for the beat structure every chapter from Chapter 2 onward should follow, and the file-naming convention (`chNN_{kingdom}.rpy`) to keep all four routes consistent.
 
 ---
 
@@ -169,15 +207,18 @@ define gui.hover_color = "#7a9abf"       # Hover color
 
 ## 📝 Story Status
 
-| Kingdom | Status | Progress |
-|---------|--------|----------|
-| Prologue | 🚧 In Development | 50% |
-| Frozen Kingdom | 📝 Outlined | 0% |
-| Tree Kingdom | 📝 Outlined | 0% |
-| Sandy Shores | 📝 Outlined | 0% |
-| Swamp Kingdom | 📝 Outlined | 0% |
+| Route | Status | Progress |
+|-------|--------|----------|
+| Prologue | ✅ Complete | 4/4 beats — ship, kraken, escape choices, kingdom routing |
+| Khionia (Frozen) | 🚧 In Development | Chapter 1/12 written |
+| Rhizoma (Tree) | 🚧 In Development | Chapter 1/12 written |
+| Arenia (Sandy Shores) | 🚧 In Development | Chapter 1/12 written |
+| Helos (Swamp) | 🚧 In Development | Chapter 1/12 written |
+| Endings / Convergence | 📝 Not Started | 0% — waits until all four routes reach Chapter 12 |
 
-*Currently working on: Prologue, UI customization, and sourcing carved-frame art assets.*
+**Total planned content:** 12 chapters × 4 kingdoms = 48 chapter files, plus the prologue and endings/convergence content.
+
+*Currently working on: writing Chapter 2 across all four kingdoms, following the structure in `CHAPTER_TEMPLATE.md`. Background/character art sourcing hasn't started yet — see [Art Direction](#-art-direction) below for the current plan.*
 
 ---
 
@@ -186,13 +227,16 @@ define gui.hover_color = "#7a9abf"       # Hover color
 - [x] Repository setup and initial commit
 - [x] GUI theme foundation (colors, fonts, spacing)
 - [x] Placeholder menu backgrounds
+- [x] Complete prologue (escape sequence + organic kingdom routing)
+- [x] Reckoning tracker (confess/hide/embrace) + per-NPC Relationship Points system
+- [x] Chapter 1 written for all four kingdoms (Khionia, Rhizoma, Arenia, Helos)
+- [x] Per-kingdom chapter folder structure + reusable chapter template (`CHAPTER_TEMPLATE.md`)
+- [ ] Write Chapters 2–12 for all four kingdoms (48 chapter files total)
+- [ ] Write `endings.rpy` convergence/epilogue content once all four Ch.12s exist
 - [ ] Source/create carved-wood-and-metal frame art (`frame.png`, button backgrounds, namebox)
 - [ ] Final illustrated main menu / game menu backgrounds
-- [ ] Complete prologue (escape sequence + kingdom selection)
-- [ ] Write full Frozen Kingdom storyline
-- [ ] Generate silhouettes and major moments for Frozen Kingdom
-- [ ] Release Chapter 1 demo
-- [ ] Write remaining 3 kingdoms
+- [ ] Generate silhouettes and major-moment art per kingdom, following the palette in [Art Direction](#-art-direction)
+- [ ] Release Chapter 1 demo (all four kingdoms playable through Ch.1)
 - [ ] Add ambient audio and sound effects
 - [ ] Port to web (HTML/CSS/JS) for broader accessibility
 

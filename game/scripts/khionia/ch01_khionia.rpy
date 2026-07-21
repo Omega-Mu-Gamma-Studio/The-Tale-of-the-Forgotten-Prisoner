@@ -1,8 +1,9 @@
-# frozen.rpy — Khionia, Land of Endless Snow
+# ch01_khionia.rpy — Khionia, Land of Endless Snow — Chapter 1
 #
-# Kingdom 1. Full storyline: castle intrigue, Princess Asteria, Lord
-# Valerius framing an innocent chef. Only the Arrival beat is written here —
-# see PREMISES.md for everything past this point.
+# Full storyline: castle intrigue, Princess Asteria, Lord Valerius framing
+# an innocent chef. This chapter covers the Arrival + Incident beats.
+# Chapter 2 goes in ../khionia/ch02_khionia.rpy — see CHAPTER_TEMPLATE.md
+# at the repo root for the beat/choice structure every chapter should follow.
 
 define asteria = Character("Princess Asteria", color="#a9c9e8")
 define valerius = Character("Lord Valerius", color="#5c7a99")
@@ -114,10 +115,12 @@ label khionia_incident:
     scene black
     with dissolve
 
-    "— End of Demo: Khionia route —"
+    "— End of Chapter 1: Khionia —"
 
     "What happens next is written in PREMISES.md, but not yet in code: proof that the chef was framed, a relic buried in the ice that already knows your name, and a Princess who is far more dangerous when she stops hating you than when she starts."
 
-    "That's the next thing we build."
-
+    # Once ch02_khionia.rpy exists with a "label khionia_ch02:" at the top,
+    # replace this "return" with "jump khionia_ch02". Leaving it as a
+    # dangling jump before ch02 exists would crash the game the moment a
+    # playtester reaches this line.
     return

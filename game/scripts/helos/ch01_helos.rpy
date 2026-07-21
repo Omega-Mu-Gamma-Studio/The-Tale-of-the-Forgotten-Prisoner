@@ -1,8 +1,9 @@
-# swamp.rpy — Helos, Land of Darkness
+# ch01_helos.rpy — Helos, Land of Darkness — Chapter 1
 #
-# Kingdom 4. Full storyline: bound to Sidea the young witch, chaotic magic,
-# something old whispering in the swamp. Only the Arrival beat is written
-# here — see PREMISES.md for everything past this point.
+# Full storyline: bound to Sidea the young witch, chaotic magic, something
+# old whispering in the swamp. This chapter covers the Arrival + Incident
+# beats. Chapter 2 goes in ../helos/ch02_helos.rpy — see CHAPTER_TEMPLATE.md
+# at the repo root for the beat/choice structure every chapter should follow.
 
 define sidea = Character("Sidea", color="#a480c9")
 
@@ -87,10 +88,10 @@ label helos_incident:
     scene black
     with dissolve
 
-    "— End of Demo: Helos route —"
+    "— End of Chapter 1: Helos —"
 
     "What happens next is written in PREMISES.md, but not yet in code: a witch who's more afraid of her own power than she'll admit, a heart-shaped relic pulsing somewhere in the deepest water, and something old that's been talking to the swamp long before Sidea ever arrived."
 
-    "That's the next thing we build."
-
+    # Once ch02_helos.rpy exists with a "label helos_ch02:" at the top,
+    # replace this "return" with "jump helos_ch02".
     return
