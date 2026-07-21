@@ -27,10 +27,10 @@ The choice is yours. But the past has a way of surfacing...
 ## 🎮 Features
 
 - **4 Distinct Kingdoms** – Each with a unique story, cast, and atmosphere, planned as a full 12-chapter route apiece:
-  - ❄️ Khionia, the Frozen Kingdom of the North – Survival, sacrifice, and buried relics
-  - 🌳 Rhizoma, the Tree Kingdom – Class struggle, rot, and ancient secrets
-  - 🏖️ Arenia, the Sandy Shores – Corruption, pleasure, and gilded cages
-  - 🏚️ Helos, the Swamp Kingdom – Exiles, ghosts, and the truth you've hidden
+  - ❄️ **Khionia** – The Frozen Kingdom of the North – Survival, sacrifice, and buried relics
+  - 🌳 **Rhizoma** – The Root Kingdom – Class struggle, rot, and ancient secrets
+  - 🏖️ **Arenia** – The Golden Kingdom – Corruption, pleasure, and gilded cages
+  - 🏚️ **Helos** – The Swamp Kingdom – Exiles, ghosts, and the truth you've hidden
 
 - **A Hidden Past** – Your crime is fixed but unknown. Discover it—or bury it forever. See [Mechanics](#-mechanics) for how this is tracked under the hood.
 
@@ -163,13 +163,13 @@ The-Tale-of-the-Forgotten-Prisoner/
 │       ├── characters.rpy         # Shared character defs, reckoning + RP trackers
 │       ├── prologue.rpy           # The shipwreck and escape sequence (complete)
 │       ├── khionia/
-│       │   └── ch01_khionia.rpy   # Chapter 1 written; ch02–ch12 to come
+│       │   └── ch01_khionia.rpy   # Chapter 1 complete
 │       ├── rhizoma/
-│       │   └── ch01_rhizoma.rpy   # Chapter 1 written; ch02–ch12 to come
+│       │   └── ch01_rhizoma.rpy   # Chapter 1 complete
 │       ├── arenia/
-│       │   └── ch01_arenia.rpy    # Chapter 1 written; ch02–ch12 to come
+│       │   └── ch01_arenia.rpy    # Chapter 1 complete
 │       ├── helos/
-│       │   └── ch01_helos.rpy     # Chapter 1 written; ch02–ch12 to come
+│       │   └── ch01_helos.rpy     # Chapter 1 complete
 │       └── endings.rpy            # Convergence/epilogues — not yet created
 ├── CHAPTER_TEMPLATE.md             # Per-chapter beat/choice template for all 48 chapter files
 ├── PREMISES.md                     # Full world, kingdom, and crime lore reference
@@ -210,15 +210,15 @@ define gui.hover_color = "#7a9abf"       # Hover color
 | Route | Status | Progress |
 |-------|--------|----------|
 | Prologue | ✅ Complete | 4/4 beats — ship, kraken, escape choices, kingdom routing |
-| Khionia (Frozen) | 🚧 In Development | Chapter 1/12 written |
-| Rhizoma (Tree) | 🚧 In Development | Chapter 1/12 written |
-| Arenia (Sandy Shores) | 🚧 In Development | Chapter 1/12 written |
-| Helos (Swamp) | 🚧 In Development | Chapter 1/12 written |
+| Khionia (Frozen) | ✅ Complete | Chapter 1/12 written — "The Snow Remembers" |
+| Rhizoma (Root) | ✅ Complete | Chapter 1/12 written — "From Roots, All Things" |
+| Arenia (Golden) | ✅ Complete | Chapter 1/12 written — "Gold from Sand" |
+| Helos (Swamp) | ✅ Complete | Chapter 1/12 written — "From Darkness, Light" |
 | Endings / Convergence | 📝 Not Started | 0% — waits until all four routes reach Chapter 12 |
 
 **Total planned content:** 12 chapters × 4 kingdoms = 48 chapter files, plus the prologue and endings/convergence content.
 
-*Currently working on: writing Chapter 2 across all four kingdoms, following the structure in `CHAPTER_TEMPLATE.md`. Background/character art sourcing hasn't started yet — see [Art Direction](#-art-direction) below for the current plan.*
+**Current Status:** All four Chapter 1 scripts are written and ready for playtesting. Next up: outlining and writing Chapter 2 for each kingdom, following the structure in `CHAPTER_TEMPLATE.md`.
 
 ---
 
@@ -229,8 +229,8 @@ define gui.hover_color = "#7a9abf"       # Hover color
 - [x] Placeholder menu backgrounds
 - [x] Complete prologue (escape sequence + organic kingdom routing)
 - [x] Reckoning tracker (confess/hide/embrace) + per-NPC Relationship Points system
-- [x] Chapter 1 written for all four kingdoms (Khionia, Rhizoma, Arenia, Helos)
 - [x] Per-kingdom chapter folder structure + reusable chapter template (`CHAPTER_TEMPLATE.md`)
+- [x] **Chapter 1 written for all four kingdoms** (Khionia, Rhizoma, Arenia, Helos)
 - [ ] Write Chapters 2–12 for all four kingdoms (48 chapter files total)
 - [ ] Write `endings.rpy` convergence/epilogue content once all four Ch.12s exist
 - [ ] Source/create carved-wood-and-metal frame art (`frame.png`, button backgrounds, namebox)
@@ -288,3 +288,11 @@ For inquiries about licensing, collaboration, or future commercial use, please c
 
 - **GitHub:** [Omega-Mu-Gamma-Studio](https://github.com/Omega-Mu-Gamma-Studio)
 - **Project Repository:** [The-Tale-of-the-Forgotten-Prisoner](https://github.com/Omega-Mu-Gamma-Studio/The-Tale-of-the-Forgotten-Prisoner)
+
+---
+
+*"The past doesn't drown. It waits. And when you least expect it... it surfaces."*
+
+---
+
+**Made with ❤️ and dark atmospheres.**
