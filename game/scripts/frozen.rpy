@@ -6,6 +6,8 @@
 
 define asteria = Character("Princess Asteria", color="#a9c9e8")
 define valerius = Character("Lord Valerius", color="#5c7a99")
+define leontios = Character("King Leontios", color="#c9b98a")
+define chef = Character("The Royal Chef", color="#d9d9d9")
 
 label khionia_arrival:
 
@@ -22,12 +24,77 @@ label khionia_arrival:
 
     "The last thing you feel before the cold takes you under is stone beneath your knees, and someone shouting for the guards."
 
+    jump khionia_incident
+
+label khionia_incident:
+
     scene black
     with dissolve
 
-    "— End of Prologue Demo: Khionia route —"
+    "Three days pass in a servant's cot before anyone tells you what you're for."
 
-    "What happens next is written in PREMISES.md, but not yet in code: a wet staircase, spilled soup, a Princess who wants you dead, and an uncle who arrived far too conveniently with a scapegoat already bleeding."
+    "The castle doesn't trust a stranger enough to feed them for nothing, so they hand you a bucket, a rag, and a staircase that hasn't seen daylight since the last hard freeze — slick with melted snow and worse things dragged in on boot soles."
+
+    "You're still learning to walk on legs that remember drowning better than they remember standing."
+
+    "That's when the soup finds you. Or you find the soup. Later, you're honestly not sure which."
+
+    "Your foot goes out from under you on the wet stone, and there's nowhere to fall that isn't directly into the royal chef's path — a broad, kind-faced man carrying a full tureen up to the family table with both arms."
+
+    "You hit him mid-stride. He goes down hard, his head cracking against the banister, and the soup goes everywhere — including, spectacularly, down the front of a dress that costs more than every year of your old life combined."
+
+    asteria "You—"
+
+    "Princess Asteria doesn't finish the sentence. She doesn't need to. Her hand is already on the hilt of something ceremonial and extremely sharp, and for a woman who's supposed to be cold and untouchable, she looks entirely prepared to touch you with several inches of steel."
+
+    leontios "Enough, Asteria. Put it away."
+
+    "He says it quietly. Not a request — the kind of quiet that only works when you've never had to raise your voice to be obeyed."
+
+    asteria "He attacked your chef in front of the household, and you want me to—"
+
+    leontios "I want you to let the man explain himself before we feed him to the dogs. Even traitors get that much, in my house."
+
+    "You start talking. You don't remember deciding to — the words just come, clumsy and fast, apology tangled up with explanation tangled up with the honest truth that you were carrying a bucket, you slipped, you're sorry, you're so sorry—"
+
+    "The chef groans on the floor behind you. Still breathing. Still alive. That's something, at least."
+
+    "Then the doors open, and a second man walks in — silver at his temples, a smile that doesn't reach anywhere near his eyes."
+
+    valerius "Forgive the intrusion, Your Majesty. I came as soon as I heard. And I'm afraid the timing is... fortunate, in its way."
+
+    "He's carrying something — a small dark vial, pinched between two fingers like it might bite him."
+
+    valerius "I found this in the kitchen not an hour ago. Hidden behind the flour stores. I believe our chef was planning something considerably worse than spilled soup tonight."
+
+    "The chef's head comes up off the floor fast enough that it must hurt."
+
+    chef "That's not mine — I've never seen that in my life, I swear it on my children, I swear it on the King's own—"
+
+    valerius "Poison rarely announces itself, unfortunately. But this stranger—' he looks at you, and something in his expression settles into place like a lock turning, '—this stranger knocked the tureen from his hands before a single spoonful reached the table. Divine timing, wouldn't you say? Or divine intervention."
+
+    "You don't know what to say to that. You didn't save anyone. You fell down a wet staircase because your legs still don't work right."
+
+    "Nobody asks you to correct him."
+
+    "The chef is dragged out still protesting, his voice cracking on the word innocent until a door somewhere swallows the sound of it whole."
+
+    leontios "You'll stay in the castle. Earn your keep properly this time — accident or not, Valerius seems to think the gods sent you here for a reason. I'm not certain I still believe in reasons like that. But I believe in debts, and you've put my brother in a very generous mood."
+
+    "That's it, apparently. That's how you go from drowning prisoner to indebted stranger with a room and a purpose, in the space of one spilled tureen and one very convenient vial."
+
+    "Princess Asteria doesn't say anything else. She doesn't have to. The look she gives you on her way out of the hall is answer enough — whatever you are to her father now, you are her enemy, and she has decided this with the same speed and certainty she decides everything."
+
+    "Later — much later, alone in a servant's corridor — she pulls back her hood for the first time. For just a moment you see her without the crown, without the composure. She looks impossibly young to be carrying this much grief alone."
+
+    "Then the hood goes back up, and so does she."
+
+    scene black
+    with dissolve
+
+    "— End of Demo: Khionia route —"
+
+    "What happens next is written in PREMISES.md, but not yet in code: proof that the chef was framed, a relic buried in the ice that already knows your name, and a Princess who is far more dangerous when she stops hating you than when she starts."
 
     "That's the next thing we build."
 

@@ -20,20 +20,23 @@ default pname = ""
 default fullname = ""
 
 # The player's crime. FIXED — does not change based on any choice the
-# player makes. Hidden from the player at all times unless a scene
-# explicitly reveals a piece of it.
+# player makes. Hidden from the player at all times; it surfaces only
+# through nightmares, memory-fragments, and NPC reactions, per PREMISES.md.
 #
-# This is a placeholder value so later scenes (nightmares, NPC reactions,
-# memory-fragments) have something consistent to reference. The real,
-# final answer is a worldbuilding decision we should nail down together
-# before writing any scene that reveals part of it.
-default true_crime = "accident"
+# Canon: the player stole the crown jewel of a prince. They believe they
+# were justified — but a crime is a crime, and it's why they were on the
+# ship to begin with. Never state this outright in a scene; hint at it
+# (a glint of gold, a flash of a throne room, a guard's odd reaction)
+# and let the player piece it together over time.
+default true_crime = "stole_the_crown_jewel"
 
-# Which "temperament" choice and which current the player picked during
-# the Prologue's escape sequence. These funnel the player into a kingdom
-# organically — the player is never shown a literal "pick your kingdom" menu.
-default escape_action = None
-default escape_current = None
+# The Prologue's escape sequence is two simple binary choices:
+#   priority: what the player cares about in the moment ("self" or "other")
+#   response: how the player meets the sea ("fight" or "trust")
+# The 2x2 combination funnels the player into a kingdom organically —
+# they are never shown a literal "pick your kingdom" menu.
+default priority = None
+default response = None
 
 # The kingdom the player ends up in: "khionia", "rhizoma", "arenia", or "helos".
 default kingdom = None

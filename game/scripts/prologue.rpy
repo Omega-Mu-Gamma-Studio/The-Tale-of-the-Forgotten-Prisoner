@@ -3,11 +3,10 @@
 # The Prologue: The Ship, The Kraken, The Escape.
 #
 # Structure:
-#   prologue_start          - chains, the guard, the player's name, the attack
-#   prologue_choice_action  - "what kind of person are you when the ship dies"
-#   prologue_choice_current - "which way does the sea take you" (skipped if
-#                              the player chose the instinct/dive option)
-#   prologue_resolve        - combines both choices into a kingdom, organically,
+#   prologue_start           - chains, the guard, the player's name, the attack
+#   prologue_choice_priority - "what matters to you as the ship dies" (self/other)
+#   prologue_choice_response - "how do you meet the sea" (fight/trust)
+#   prologue_resolve         - combines both choices into a kingdom, organically,
 #                              and jumps to that kingdom's arrival scene
 #
 # No art assets exist yet. Every scene here uses "scene black" on purpose —
@@ -61,69 +60,53 @@ label prologue_start:
 
     "Wood splits. Water floods in cold and immediate, and around you chained men scream the names of gods they stopped believing in three ports ago."
 
-    "For half a second, in the spray and the dark, you see a face that isn't yours reflected in the water. You don't know if it's memory or nightmare."
+    "For half a second, in the spray and the dark, something glints gold in your palm that has no business being there — gone before you can close your fist around it."
 
-    "You never do."
+    "A memory, maybe. Or a habit that never really left you."
 
     "The ship is going down, and you have seconds left to decide what kind of person drowns, and what kind of person doesn't."
 
-label prologue_choice_action:
+label prologue_choice_priority:
 
     menu:
-        "Fight your way toward a lifeboat — haul yourself over anyone in your path.":
-            $ escape_action = "bold"
-            "You don't ask permission. Elbows, knees, the flat of a broken oar — whatever gets you to the boat gets used."
-            "Somewhere behind you, someone screams a name. You don't look back to find out whose voice it was."
+        "Your own survival. Nothing else matters right now.":
+            $ priority = "self"
+            "You stop thinking about anyone else on this ship. There isn't room for anyone else in your head right now — not if you want to still have a head in five minutes."
 
-        "Let go of everything and dive straight down into the black water.":
-            $ escape_action = "instinct"
-            "You stop thinking. Your body decides for you, folding down and under, away from the splintering wood and the thing with too many eyes."
-            "The cold swallows the sound of the ship dying above you."
+        "The prisoner chained beside you — you won't let him drown alone.":
+            $ priority = "other"
+            "You don't know his name. You never asked. But his hands are shaking too hard to work his own lock, and you can't make yourself let go of him."
 
-        "Grab the nearest wreckage and hold on — let the sea decide what happens next.":
-            $ escape_action = "fatalist"
-            "You've made peace with worse odds than this. You wrap both arms around a shattered spar and stop fighting the water."
-            "If you were meant to answer for what you did, the sea can decide that too."
+    jump prologue_choice_response
 
-        "Reach for the prisoner chained beside you — you can't leave him to drown.":
-            $ escape_action = "compassion"
-            "You don't know his name. You never asked. But his hands are shaking too hard to work the lock, and you can't make yourself let go of him."
-            "Whatever you did to end up here, it wasn't this. It was never this."
+label prologue_choice_response:
 
-    if escape_action == "instinct":
-        jump prologue_resolve
-
-    jump prologue_choice_current
-
-label prologue_choice_current:
-
-    "The current has you now, and it's stronger than anything you can fight for long."
+    "The current has you now, and it doesn't care what you just decided."
 
     menu:
-        "Fight it — aim for the cold, dark line of a horizon to the north.":
-            $ escape_current = "north"
-            "The water turns colder with every stroke, biting at your fingers until you can't feel them anymore. Something in you insists this is right anyway."
+        "Fight it. Force it to bend to you.":
+            $ response = "fight"
+            "You claw against the water with everything you have left, refusing to let the sea choose for you."
 
-        "Stop fighting — let the warm current carry you south, wherever it leads.":
-            $ escape_current = "south"
-            "The water is warmer here. It's easier to let it take you than to keep pretending you have any control left."
+        "Trust it. Let it decide where you end up.":
+            $ response = "trust"
+            "You stop fighting. Whatever's waiting on the other side of this, exhausting yourself first won't change it."
 
     jump prologue_resolve
 
 label prologue_resolve:
 
     python:
-        # The kingdom is never chosen directly by the player — it falls out
-        # of the two choices above, the way real panic-decisions actually
-        # narrow your options for you.
-        if escape_action == "instinct":
-            kingdom = "rhizoma"
-        elif escape_current == "north":
-            kingdom = "khionia"
-        elif escape_action == "bold":
+        # A clean 2x2 funnel. The player never sees this table — it's just
+        # the sum of two panic-decisions made in the dark.
+        if priority == "self" and response == "fight":
             kingdom = "arenia"
+        elif priority == "self" and response == "trust":
+            kingdom = "rhizoma"
+        elif priority == "other" and response == "fight":
+            kingdom = "khionia"
         else:
-            # fatalist or compassion, heading south
+            # other + trust
             kingdom = "helos"
 
     "The sea does not release you gently. It never does."
