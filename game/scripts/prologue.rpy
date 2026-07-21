@@ -114,10 +114,10 @@ label prologue_resolve:
     "Somewhere in the dark, the ship finishes dying without you. And somewhere else — a shore you can't see yet, in a kingdom that doesn't know your name — the water is already deciding where to put you down."
 
     if kingdom == "khionia":
-        jump khionia_arrival
+        jump khionia_ch01
     elif kingdom == "rhizoma":
-        jump rhizoma_arrival
+        jump rhizoma_ch01
     elif kingdom == "arenia":
-        jump arenia_arrival
+        jump arenia_ch01
     elif kingdom == "helos":
-        jump helos_arrival
+        jump helos_ch01

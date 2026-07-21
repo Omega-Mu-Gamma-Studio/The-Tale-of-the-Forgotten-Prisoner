@@ -1,96 +1,365 @@
 # ch01_helos.rpy — Helos, Land of Darkness — Chapter 1
+# "From Darkness, Light"
 #
-# Full storyline: bound to Sidea the young witch, chaotic magic, something
-# old whispering in the swamp. This chapter covers the Arrival + Incident
-# beats. Chapter 2 goes in ../helos/ch02_helos.rpy — see CHAPTER_TEMPLATE.md
-# at the repo root for the beat/choice structure every chapter should follow.
+# Full storyline: swamp survival, Sidea the young witch,
+# the binding spell, chaotic magic, and the voice in the swamp.
+# Chapter 2 goes in ../helos/ch02_helos.rpy
 
 define sidea = Character("Sidea", color="#a480c9")
+define voice = Character("???", color="#6a5a7a")
 
-label helos_arrival:
-
-    scene black
-    with dissolve
-
-    "Mist first, then mud, then the sound of something large sliding into black water very close to where you're lying."
-
-    "Alligators. Three, maybe four, drawn by the smell of blood and salt on your skin. You're too weak to do anything but watch them circle."
-
-    "Then — light. A bolt of violet fire cracks across the water and the alligators scatter, hissing, back into the dark."
-
-    "A girl steps out of the mist. She can't be older than twenty, staff still smoking faintly at the tip, and she's looking at you less like someone she just saved and more like something she just found."
-
-    sidea "Oh, good, you're alive. Hold still — this might feel strange."
-
-    "She waves the staff before you can ask what 'this' means. Something cold and glowing wraps around your wrist like a bracelet made of frost and static."
-
-    sidea "There. Now you can't leave. Don't worry — it's not permanent. Probably. I haven't figured out how to undo it yet."
-
-    jump helos_incident
-
-label helos_incident:
+label helos_ch01:
 
     scene black
     with dissolve
 
-    "The curse — she insists on calling it a 'binding,' like that's less alarming — settles into your skin within the hour. Cold, faint, and always exactly where your pulse is loudest."
+    "Warmth reaches you before land does."
 
-    sidea "Okay. So. Small chance it kills you if I don't figure out the counter-spell in time. But a much bigger chance it doesn't! Statistically speaking."
+    "The water is warm, thick, and smells of decay. Your clothes are soaked. Your limbs are heavy. You wake face-down in murky water, your mouth filled with silt. You can barely lift your head."
 
-    "You ask what the statistics actually are. She changes the subject."
+    "You hear a gurgle—a bubble rising from the mud. It smells like rot."
 
-    "She sets up camp on a dry hummock somewhere in the middle of the mist, and it becomes clear within the first day that Sidea knows an enormous number of spells and approximately none of their consequences."
+    scene silhouette_helos_marsh
+    with fade
 
-    "She tries to heal the gash on your arm from the wreckage. Your arm spends the next three hours as a tentacle. It works remarkably well as a tentacle, which somehow makes it worse."
+    "You're in a swamp. Black water stretches in every direction. Twisted trees rise from the water, their roots exposed like grasping fingers. Hanging moss drips from the branches. The air is thick with mist."
 
-    sidea "In my defense, that's *technically* still an arm."
+    "You hear movement. A ripple in the water. Then another. You turn your head."
 
-    "She tries to burn off your fever. You start glowing faintly in the dark instead — a soft, sourceless purple-white that doesn't fade by morning, or the morning after that."
-
-    sidea "Okay, that one might be permanent. But you make excellent company on night watch now, so really, we've gained something."
-
-    "You point out that you didn't ask to glow. She points out that you didn't ask to nearly die in a swamp either, and life is full of surprises."
-
-    "It's hard to stay angry at her. You try, a little, out of principle. It doesn't take."
-
-    "She talks constantly — about spell theory, about the Deep, about the causeway merchants who won't sell to her anymore after the last 'incident' — and it takes you longer than it should to notice that she's not just filling silence. She's starving for it."
-
-    sidea "...Sorry. You probably don't want the full history of everyone who's ever refused to teach me anything. I just — don't really get to talk. Out here."
-
-    "It's the first honest thing she's said since the alligators. Something about it loosens your own tongue, just slightly."
+    "There are four of them. Their eyes break the surface, cold and unblinking. They're circling you. They're waiting."
 
     menu:
-        "Tell her something true — the ship, the chains, the crime you can't quite remember.":
-            $ reckoning_adjust("confess")
-            $ rp_adjust("sidea", 1)
+        "How do you react?"
+        "Freeze":
+            $ helos_first_reaction = "freeze"
+            "You hold perfectly still. They might lose interest. They might not. You feel the water shift around you."
+        "Swim":
+            $ helos_first_reaction = "swim"
+            "You make a break for the nearest tree. Your muscles burn. The water is thick. But you're fast."
+        "Splash":
+            $ helos_first_reaction = "splash"
+            "You thrash, trying to scare them off. It's loud, chaotic, desperate. Mud splatters your face."
 
-            "You tell her. Not all of it — you don't have all of it to give — but the ship, the chains, the shape of a crime you can't quite name. It's the first time you've said any of it out loud since it happened."
+    "One of the alligators lunges. You see its jaws open. You can smell its breath—warm, wet, and hungry. Its teeth are inches from your face."
 
-            sidea "...Huh. Okay. That's a lot heavier than 'don't really get to talk out here,' but I asked for honesty, so. Thank you. For trusting me with it."
+    "A bolt of purple light shoots past your head. It strikes the water between you and the alligator. The creature recoils, hissing. The others scatter."
 
-            "She doesn't push for more. That, somehow, makes it easier to have said anything at all."
+    "You feel the shockwave—a pulse of heat and energy that ripples through the water."
 
-        "Say nothing. Let the moment pass.":
-            $ reckoning_adjust("hide")
+    "A figure emerges from the mist."
 
-            "You almost tell her. The words get as far as your throat before you swallow them back down, and the moment passes the way moments do — quietly, without either of you acknowledging it happened."
+    jump helos_scene2
 
-            "The binding spell chooses that exact moment to hum warm against your wrist, like it noticed too."
+label helos_scene2:
 
-    "That night, you wake to her sitting bolt upright at the edge of the hummock, staff gripped white-knuckled, staring out into mist that has gone very, very quiet."
+    "She's young. Barely out of her teens. Her clothes are mismatched—a tattered cloak, a patched dress, boots that are too big for her feet. She's holding a staff that's taller than she is, and it's still crackling with purple energy."
 
-    sidea "...Did you hear that?"
+    "She looks at you. She tilts her head."
 
-    "You didn't. You're not sure you want to."
+    sidea "Oh. You're alive. That's inconvenient."
 
-    "She doesn't explain. She doesn't sleep again that night, either — and for the first time since you woke up in this swamp, the curse on your wrist feels less like the most dangerous thing out here."
+    "She studies you. Her eyes are wide and curious."
+
+    sidea "I was hoping for a corpse. I need fingers for a spell."
+
+    "She pauses. She seems almost sorry."
+
+    sidea "Don't take it personally. I just really need those fingers."
+
+    menu:
+        "How do you respond?"
+        "Grateful":
+            $ helos_approach = "grateful"
+            "'You saved my life. Thank you.' You're polite. Grateful."
+        "Demanding":
+            $ helos_approach = "demanding"
+            "'Who are you? What is this place?' You're trying to get your bearings."
+        "Exhausted":
+            $ helos_approach = "exhausted"
+            "You just stare at her. You're too weak to speak. You're at her mercy."
+
+    sidea "Don't thank me yet. I need something from you."
+
+    "She raises her staff. She speaks words that sound ancient—wrong, somehow. A purple light swirls around her. It wraps around your wrist."
+
+    jump helos_scene3
+
+label helos_scene3:
+
+    "The spell wraps around your wrist like a cold hand. You feel it settle into your bones. It's heavy. It's cold. It whispers in your ear at night. You can feel it in your soul."
+
+    "The purple light fades. You look at your wrist. There's a mark there—a spiral, pulsing faintly. It doesn't hurt. But it's there. And you can feel it."
+
+    sidea "There. Now you can't leave."
+
+    menu:
+        "How do you react to the binding spell?"
+        "Panic":
+            $ helos_binding_reaction = "panic"
+            "'What did you do to me? Take it off!' You're afraid. Angry."
+        "Curiosity":
+            $ helos_binding_reaction = "curious"
+            "'What does it do?' You're trying to understand."
+        "Resignation":
+            $ helos_binding_reaction = "resigned"
+            "You just look at it. You've been collared, chained, cursed. This is just another cage. You're exhausted. You don't have the energy to fight."
+
+    sidea "It's not permanent. Probably. I haven't figured out how to undo it yet."
+
+    "She's not lying. You can see it in her eyes—she's terrified. She doesn't know what she's doing. She's learning. And you're her test subject."
+
+    "You feel it pulse. It's almost like a heartbeat."
+
+    sidea "You can't leave my side. You can't hurt me. And if I die, you die."
+
+    "She pauses."
+
+    sidea "I think. I'm still working on the details."
+
+    jump helos_scene4
+
+label helos_scene4:
+
+    scene silhouette_helos_hut
+    with fade
+
+    "She leads you to her home—a small hut built on stilts in the middle of the swamp. It's cluttered with books, jars, dried herbs, and strange artifacts. She has a workbench covered in half-finished spells."
+
+    sidea "I need to test something. Hold still."
+
+    menu:
+        "Do you trust her?"
+        "Yes":
+            $ helos_trust = True
+            "You hold still. You want to see what she can do. You're curious. You're building trust."
+        "No":
+            $ helos_trust = False
+            "You step back. You don't trust her magic. You're cautious. She's annoyed."
+        "Bargain":
+            $ helos_trust = False
+            "'If it goes wrong, you'll fix it. Right?' She shrugs. You're not fully trusting her, but you're cooperating."
+
+    "She waves her staff. She says a word. Purple light swirls around you."
+
+    "You feel a tingle. Then a warmth. Then a wrongness."
+
+    "Your arm begins to change. It stretches. It twists. You watch in horror as your hand turns into a tentacle—long, sinuous, covered in suckers."
+
+    "She stares. Her face goes pale."
+
+    sidea "Oh. That's new."
+
+    "She starts flipping through her book frantically, muttering:"
+
+    sidea "That's not what it was supposed to do. That's not—"
+
+    menu:
+        "How do you react to the mutation?"
+        "Panic":
+            $ helos_mutation = "panic"
+            "'Turn it back! Turn it back now!' You're terrified."
+        "Fascination":
+            $ helos_mutation = "fascinated"
+            "'What... what did you do?' You're curious. Horrified, but curious."
+        "Laughter":
+            $ helos_mutation = "laughter"
+            "You start laughing. It's absurd. You're a prisoner, a test subject, and now you have a tentacle for an arm. You're coping with the absurdity."
+
+    sidea "It should wear off in three hours. Probably."
+
+    jump helos_scene5
+
+label helos_scene5:
+
+    "You're sitting in her hut. The tentacle is slowly turning back into an arm. She's watching you, studying you. She hasn't had anyone to talk to in a long time."
+
+    menu:
+        "What do you talk about?"
+        "Her":
+            $ helos_talk = "her"
+            "'How long have you been alone?' You're trying to understand her."
+        "Yourself":
+            $ helos_talk = "you"
+            "'I was on a ship. A prisoner. A kraken attacked.' You're sharing your story."
+        "The swamp":
+            $ helos_talk = "swamp"
+            "'What is this place? What's out there?' You're trying to understand the world."
+
+    sidea "I've been alone for years. I tried to find other witches. They were all dead. Or worse."
+
+    "She looks away. Her voice is smaller now."
+
+    sidea "The binding spell wasn't just to keep you close. It was to keep you with me."
+
+    "She's not just a chaotic witch. She's desperately lonely."
+
+    sidea "I don't even know your name."
+
+    menu:
+        "What name do you give her?"
+        "Real name":
+            $ helos_name = "real"
+            "You tell her. You're trusting her."
+        "Fake name":
+            $ helos_name = "fake"
+            "You give her a false name. You're protecting yourself."
+        "No name":
+            $ helos_name = "none"
+            "'I don't remember.' You're hiding. Or you're telling the truth."
+
+    sidea "That's okay. I'll call you something."
+
+    "She pauses. A grin spreads across her face."
+
+    sidea "Tentacle. I'll call you Tentacle."
+
+    "You groan. She smiles. It's the first time you've seen her genuinely happy."
+
+    jump helos_scene6
+
+label helos_scene6:
+
+    "She's trying to fix your arm. She's reading from a book."
+
+    sidea "This should work. I think."
+
+    menu:
+        "How do you prepare?"
+        "Distract her":
+            $ helos_prep = "distract"
+            "'Tell me more about the swamp.' You're trying to help her relax."
+        "Watch closely":
+            $ helos_prep = "watch"
+            "You want to see what she does. You're learning."
+        "Close your eyes":
+            $ helos_prep = "close"
+            "You don't want to see it if it goes wrong. You're scared."
+
+    "She casts the spell. It works—your arm is normal again. But something else happens."
+
+    "You start to glow. A soft, ethereal light emanates from your skin."
+
+    sidea "Oh. You're glowing. That's... new."
+
+    "There's a look in her eyes—she's studying you. She's trying to understand how it happened."
+
+    sidea "It might be permanent. I'm not sure."
+
+    "But her eyes are calculating. She's already thinking about how this could be useful—or dangerous."
+
+    menu:
+        "How do you react?"
+        "Amused":
+            $ helos_glow = "amused"
+            "'I'm a lamp now.' You're leaning into the absurdity."
+        "Annoyed":
+            $ helos_glow = "annoyed"
+            "'Fix it. Now.' You're losing patience."
+        "Curious":
+            $ helos_glow = "curious"
+            "'Can I control it?' You're experimenting."
+
+    sidea "I don't know. Let's find out."
+
+    jump helos_scene7
+
+label helos_scene7:
+
+    scene silhouette_helos_night
+    with fade
+
+    "Night falls. The swamp is dark and alive with sounds—insects, frogs, something larger moving in the water. Sidea is asleep. You're awake, watching the mist."
+
+    "You hear something. A whisper. It's faint, almost inaudible."
+
+    voice "...you shouldn't be here..."
+
+    menu:
+        "What do you do?"
+        "Wake Sidea":
+            $ helos_voice = "wake"
+            "You shake her awake. 'I heard something.' You're afraid. You need her."
+        "Investigate":
+            $ helos_voice = "investigate"
+            "You step outside. You follow the voice. You're curious. You might be making a mistake."
+        "Ignore it":
+            $ helos_voice = "ignore"
+            "You stay in the hut. You try to sleep. You're trying to avoid the inevitable."
+
+    "The voice is still there. It's old. It's patient."
+
+    voice "...she doesn't know what she's doing. She'll hurt you. She'll hurt herself. You need to leave."
+
+    "You look at Sidea. She's sleeping soundly, her staff beside her. She looks young. Vulnerable."
+
+    "The voice pauses. Then, softer:"
+
+    voice "She's so lonely."
+
+    voice "But you can't leave. She bound you. She did it to keep you."
+
+    "The voice isn't angry. It's sad."
+
+    voice "She doesn't even know your name."
+
+    jump helos_scene8
+
+label helos_scene8:
+
+    scene silhouette_helos_morning
+    with fade
+
+    "You wake up. The glow has faded, but your skin still has a faint shimmer. Sidea is already awake, making tea."
+
+    sidea "I think I figured out how to undo the binding."
+
+    menu:
+        "How do you respond?"
+        "Relieved":
+            $ helos_morning = "relieved"
+            "'Good. Let's do it.' You want your freedom back."
+        "Suspicious":
+            $ helos_morning = "suspicious"
+            "'Why now?' You don't trust her change of heart."
+        "Nervous":
+            $ helos_morning = "nervous"
+            "'What happens if you undo it?' You're afraid of the consequences."
+
+    "She pauses."
+
+    sidea "I don't want to. But I will. It's not fair to keep you here."
+
+    "She reaches for your wrist. Her fingers are cold. She looks up at you."
+
+    sidea "I don't want to. But I will."
+
+    "This is an intimate moment. She's touching you voluntarily—and it's not about magic. It's about letting go."
+
+    sidea "I'll be alone again."
+
+    "You realize: she's not just testing spells. She's testing connection. She's trying to figure out how to be with someone without breaking them."
+
+    menu:
+        "What do you tell her?"
+        "Stay":
+            $ helos_choice = "stay"
+            "'I'll stay. For now. You need help.' You're choosing to stay."
+            $ rp_adjust("sidea", 2)
+        "Leave":
+            $ helos_choice = "leave"
+            "'I need to go. I have things to figure out.' You're choosing to leave."
+        "Uncertain":
+            $ helos_choice = "uncertain"
+            "'I don't know yet. Let's take it one day at a time.' You're keeping your options open."
+
+    sidea "It's okay. You can leave. But I'll be here. If you ever want to come back."
 
     scene black
     with dissolve
 
-    "— End of Chapter 1: Helos —"
+    "The swamp remembers everything. And it's patient."
 
-    "What happens next is written in PREMISES.md, but not yet in code: a witch who's more afraid of her own power than she'll admit, a heart-shaped relic pulsing somewhere in the deepest water, and something old that's been talking to the swamp long before Sidea ever arrived."
+    "— End of Chapter 1: Helos —"
 
     # Once ch02_helos.rpy exists with a "label helos_ch02:" at the top,
     # replace this "return" with "jump helos_ch02".
