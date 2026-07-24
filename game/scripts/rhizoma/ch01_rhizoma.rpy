@@ -4,36 +4,84 @@
 # Full storyline: underground survival, Thalloa the root-gatherer,
 # the merchant's workshop, the poison mushroom, and the Heartwood Seed.
 # Chapter 2 goes in ../rhizoma/ch02_rhizoma.rpy
+# # ============================================================
+# Rhizoma Chapter 1 - Image Definitions with Size Fixes
 # ============================================================
-# Rhizoma Chapter 1 - Image Definitions
-# Based on PROMPTS.md file naming convention
-# ============================================================
 
-# --- Silhouette BGs ---
-image silhouette_rhizoma_roots = "images/silhouettes/rhizoma/silhouette_rhizoma_roots.png"
-image silhouette_rhizoma_path = "images/silhouettes/rhizoma/silhouette_rhizoma_path.png"
-image silhouette_rhizoma_workshop = "images/silhouettes/rhizoma/silhouette_rhizoma_workshop.png"
-image silhouette_rhizoma_aftermath = "images/silhouettes/rhizoma/silhouette_rhizoma_aftermath.png"
-image silhouette_rhizoma_secret = "images/silhouettes/rhizoma/silhouette_rhizoma_secret.png"
+# --- Silhouette BGs (fill the screen completely) ---
+image silhouette_rhizoma_roots:
+    "images/silhouettes/rhizoma/silhouette_rhizoma_roots.png"
+    fit "cover"
 
-# --- Major Moments ---
-image major_rhizoma_roots = "images/major_moments/rhizoma/major_rhizoma_roots.png"
-image major_rhizoma_trade = "images/major_moments/rhizoma/major_rhizoma_trade.png"
-image major_rhizoma_poison = "images/major_moments/rhizoma/major_rhizoma_poison.png"
-image major_rhizoma_thalloa_secret = "images/major_moments/rhizoma/major_rhizoma_thalloa_secret.png"
+image silhouette_rhizoma_path:
+    "images/silhouettes/rhizoma/silhouette_rhizoma_path.png"
+    fit "cover"
 
-# --- Character Silhouettes ---
-image thalloa = "images/characters/rhizoma/thalloa_default.png"
-image thalloa_hopeful = "images/characters/rhizoma/thalloa_hopeful.png"
-image thalloa_determined = "images/characters/rhizoma/thalloa_determined.png"
+image silhouette_rhizoma_workshop:
+    "images/silhouettes/rhizoma/silhouette_rhizoma_workshop.png"
+    fit "cover"
 
-image merchant = "images/characters/rhizoma/merchant_default.png"
-image merchant_calculating = "images/characters/rhizoma/merchant_calculating.png"
+image silhouette_rhizoma_aftermath:
+    "images/silhouettes/rhizoma/silhouette_rhizoma_aftermath.png"
+    fit "cover"
 
-image canopy_noble = "images/characters/rhizoma/canopy_noble.png"
-image guard = "images/characters/rhizoma/guard.png"
-image root_dweller = "images/characters/rhizoma/root_dweller.png"
+image silhouette_rhizoma_secret:
+    "images/silhouettes/rhizoma/silhouette_rhizoma_secret.png"
+    fit "cover"
 
+# --- Major Moments (show the whole image, centered with black bars if needed) ---
+image major_rhizoma_roots:
+    "images/major_moments/rhizoma/major_rhizoma_roots.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image major_rhizoma_trade:
+    "images/major_moments/rhizoma/major_rhizoma_trade.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image major_rhizoma_poison:
+    "images/major_moments/rhizoma/major_rhizoma_poison.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image major_rhizoma_thalloa_secret:
+    "images/major_moments/rhizoma/major_rhizoma_thalloa_secret.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+# --- Character Silhouettes (fill the screen area, positioned with transforms) ---
+image thalloa:
+    "images/characters/rhizoma/thalloa_default.png"
+    fit "cover"
+
+image thalloa_hopeful:
+    "images/characters/rhizoma/thalloa_hopeful.png"
+    fit "cover"
+
+image thalloa_determined:
+    "images/characters/rhizoma/thalloa_determined.png"
+    fit "cover"
+
+image merchant:
+    "images/characters/rhizoma/merchant_default.png"
+    fit "cover"
+
+image merchant_calculating:
+    "images/characters/rhizoma/merchant_calculating.png"
+    fit "cover"
+
+image canopy_noble:
+    "images/characters/rhizoma/canopy_noble.png"
+    fit "cover"
+
+image guard:
+    "images/characters/rhizoma/guard.png"
+    fit "cover"
+
+image root_dweller:
+    "images/characters/rhizoma/root_dweller.png"
+    fit "cover"
 
 # ============================================================
 # Rhizoma Chapter 1: "From Roots, All Things"
