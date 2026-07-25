@@ -8,6 +8,62 @@
 define sidea = Character("Sidea", color="#a480c9")
 define voice = Character("???", color="#6a5a7a")
 
+# ============================================================
+# Helos Chapter 1 - Image Definitions with Size Fixes
+# ============================================================
+
+# --- Silhouette BGs (fill the screen completely) ---
+image helos_bg_marsh:
+    "images/silhouettes/helos/silhouette_helos_marsh.png"
+    fit "cover"
+
+image helos_bg_hut:
+    "images/silhouettes/helos/silhouette_helos_hut.png"
+    fit "cover"
+
+image helos_bg_night:
+    "images/silhouettes/helos/silhouette_helos_night.png"
+    fit "cover"
+
+image helos_bg_morning:
+    "images/silhouettes/helos/silhouette_helos_morning.png"
+    fit "cover"
+
+# --- Major Moments (show the whole image, centered) ---
+image helos_mm_alligator_attack:
+    "images/major_moments/helos/major_helos_alligator_attack.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image helos_mm_binding_spell:
+    "images/major_moments/helos/major_helos_binding_spell.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image helos_mm_tentacle:
+    "images/major_moments/helos/major_helos_tentacle.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image helos_mm_glow:
+    "images/major_moments/helos/major_helos_glow.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image helos_mm_voice_whisper:
+    "images/major_moments/helos/major_helos_voice_whisper.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image helos_mm_touch:
+    "images/major_moments/helos/major_helos_touch.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+# ============================================================
+# Helos Chapter 1: "From Darkness, Light"
+# ============================================================
+
 label helos_ch01:
 
     scene black
@@ -19,7 +75,7 @@ label helos_ch01:
 
     "You hear a gurgle—a bubble rising from the mud. It smells like rot."
 
-    scene silhouette_helos_marsh
+    scene helos_bg_marsh
     with fade
 
     "You're in a swamp. Black water stretches in every direction. Twisted trees rise from the water, their roots exposed like grasping fingers. Hanging moss drips from the branches. The air is thick with mist."
@@ -40,11 +96,18 @@ label helos_ch01:
             $ helos_first_reaction = "splash"
             "You thrash, trying to scare them off. It's loud, chaotic, desperate. Mud splatters your face."
 
+    # MAJOR MOMENT: Alligator attack with purple light
+    scene black with dissolve
+    show helos_mm_alligator_attack at truecenter with dissolve
+    pause 2.0
+
     "One of the alligators lunges. You see its jaws open. You can smell its breath—warm, wet, and hungry. Its teeth are inches from your face."
 
     "A bolt of purple light shoots past your head. It strikes the water between you and the alligator. The creature recoils, hissing. The others scatter."
 
     "You feel the shockwave—a pulse of heat and energy that ripples through the water."
+
+    hide helos_mm_alligator_attack with dissolve
 
     "A figure emerges from the mist."
 
@@ -86,9 +149,16 @@ label helos_scene2:
 
 label helos_scene3:
 
+    # MAJOR MOMENT: Binding spell
+    scene black with dissolve
+    show helos_mm_binding_spell at truecenter with dissolve
+    pause 2.0
+
     "The spell wraps around your wrist like a cold hand. You feel it settle into your bones. It's heavy. It's cold. It whispers in your ear at night. You can feel it in your soul."
 
     "The purple light fades. You look at your wrist. There's a mark there—a spiral, pulsing faintly. It doesn't hurt. But it's there. And you can feel it."
+
+    hide helos_mm_binding_spell with dissolve
 
     sidea "There. Now you can't leave."
 
@@ -120,7 +190,7 @@ label helos_scene3:
 
 label helos_scene4:
 
-    scene silhouette_helos_hut
+    scene helos_bg_hut
     with fade
 
     "She leads you to her home—a small hut built on stilts in the middle of the swamp. It's cluttered with books, jars, dried herbs, and strange artifacts. She has a workbench covered in half-finished spells."
@@ -143,7 +213,14 @@ label helos_scene4:
 
     "You feel a tingle. Then a warmth. Then a wrongness."
 
+    # MAJOR MOMENT: Tentacle mutation
+    scene black with dissolve
+    show helos_mm_tentacle at truecenter with dissolve
+    pause 2.0
+
     "Your arm begins to change. It stretches. It twists. You watch in horror as your hand turns into a tentacle—long, sinuous, covered in suckers."
+
+    hide helos_mm_tentacle with dissolve
 
     "She stares. Her face goes pale."
 
@@ -237,6 +314,11 @@ label helos_scene6:
 
     "She casts the spell. It works—your arm is normal again. But something else happens."
 
+    # MAJOR MOMENT: Glowing
+    scene black with dissolve
+    show helos_mm_glow at truecenter with dissolve
+    pause 2.0
+
     "You start to glow. A soft, ethereal light emanates from your skin."
 
     sidea "Oh. You're glowing. That's... new."
@@ -244,6 +326,8 @@ label helos_scene6:
     "There's a look in her eyes—she's studying you. She's trying to understand how it happened."
 
     sidea "It might be permanent. I'm not sure."
+
+    hide helos_mm_glow with dissolve
 
     "But her eyes are calculating. She's already thinking about how this could be useful—or dangerous."
 
@@ -265,14 +349,21 @@ label helos_scene6:
 
 label helos_scene7:
 
-    scene silhouette_helos_night
+    scene helos_bg_night
     with fade
 
     "Night falls. The swamp is dark and alive with sounds—insects, frogs, something larger moving in the water. Sidea is asleep. You're awake, watching the mist."
 
+    # MAJOR MOMENT: Voice in the swamp
+    scene black with dissolve
+    show helos_mm_voice_whisper at truecenter with dissolve
+    pause 2.0
+
     "You hear something. A whisper. It's faint, almost inaudible."
 
     voice "...you shouldn't be here..."
+
+    hide helos_mm_voice_whisper with dissolve
 
     menu:
         "What do you do?"
@@ -306,7 +397,7 @@ label helos_scene7:
 
 label helos_scene8:
 
-    scene silhouette_helos_morning
+    scene helos_bg_morning
     with fade
 
     "You wake up. The glow has faded, but your skin still has a faint shimmer. Sidea is already awake, making tea."
@@ -329,6 +420,11 @@ label helos_scene8:
 
     sidea "I don't want to. But I will. It's not fair to keep you here."
 
+    # MAJOR MOMENT: Touch - undoing binding
+    scene black with dissolve
+    show helos_mm_touch at truecenter with dissolve
+    pause 2.0
+
     "She reaches for your wrist. Her fingers are cold. She looks up at you."
 
     sidea "I don't want to. But I will."
@@ -336,6 +432,8 @@ label helos_scene8:
     "This is an intimate moment. She's touching you voluntarily—and it's not about magic. It's about letting go."
 
     sidea "I'll be alone again."
+
+    hide helos_mm_touch with dissolve
 
     "You realize: she's not just testing spells. She's testing connection. She's trying to figure out how to be with someone without breaking them."
 
