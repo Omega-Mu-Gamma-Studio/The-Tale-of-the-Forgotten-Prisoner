@@ -33,7 +33,7 @@ label prologue_start:
     $ pname = renpy.input("What name is left to you?", default="").strip()
 
     if pname == "":
-        $ pname = "Nameless"
+        $ pname = "Bane"
 
     $ fullname = pname + " " + protagonist_surname
 

@@ -5,10 +5,11 @@
 # the merchant's workshop, the poison mushroom, and the Heartwood Seed.
 # Chapter 2 goes in ../rhizoma/ch02_rhizoma.rpy
 # # ============================================================
-# Rhizoma Chapter 1 - Image Definitions with Size Fixes
+# Rhizoma Chapter 1 - Image Definitions
+# Based on PROMPTS.md file names
 # ============================================================
 
-# --- Silhouette BGs (fill the screen completely) ---
+# --- Silhouette BGs (prompts 14-18) ---
 image silhouette_rhizoma_roots:
     "images/silhouettes/rhizoma/silhouette_rhizoma_roots.png"
     fit "cover"
@@ -29,28 +30,38 @@ image silhouette_rhizoma_secret:
     "images/silhouettes/rhizoma/silhouette_rhizoma_secret.png"
     fit "cover"
 
-# --- Major Moments (show the whole image, centered with black bars if needed) ---
-image major_rhizoma_roots:
-    "images/major_moments/rhizoma/major_rhizoma_roots.png"
+# --- Major Moments (prompts 19-24) ---
+image major_rhizoma_thalloa_ears:
+    "images/major_moments/rhizoma/major_rhizoma_thalloa_ears.png"
     fit "contain"
     align (0.5, 0.5)
 
-image major_rhizoma_trade:
-    "images/major_moments/rhizoma/major_rhizoma_trade.png"
+image major_rhizoma_spit:
+    "images/major_moments/rhizoma/major_rhizoma_spit.png"
     fit "contain"
     align (0.5, 0.5)
 
-image major_rhizoma_poison:
-    "images/major_moments/rhizoma/major_rhizoma_poison.png"
+image major_rhizoma_sigil:
+    "images/major_moments/rhizoma/major_rhizoma_sigil.png"
     fit "contain"
     align (0.5, 0.5)
 
-image major_rhizoma_thalloa_secret:
-    "images/major_moments/rhizoma/major_rhizoma_thalloa_secret.png"
+image major_rhizoma_mushroom:
+    "images/major_moments/rhizoma/major_rhizoma_mushroom.png"
     fit "contain"
     align (0.5, 0.5)
 
-# --- Character Silhouettes (fill the screen area, positioned with transforms) ---
+image major_rhizoma_thalloa_begs:
+    "images/major_moments/rhizoma/major_rhizoma_thalloa_begs.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image major_rhizoma_heartwood_dream:
+    "images/major_moments/rhizoma/major_rhizoma_heartwood_dream.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+# --- Character Silhouettes (from your prompts) ---
 image thalloa:
     "images/characters/rhizoma/thalloa_default.png"
     fit "cover"
@@ -87,6 +98,8 @@ image root_dweller:
 # Rhizoma Chapter 1: "From Roots, All Things"
 # ============================================================
 
+# Character definitions - mc is already defined in the prologue
+# We just need to define the Rhizoma-specific characters
 define thalloa = Character("Thalloa", color="#8fbf7f")
 define merchant = Character("Merchant", color="#c9b98a")
 define noble = Character("Canopy Noble", color="#d1a24a")
@@ -109,11 +122,6 @@ label rhizoma_ch01:
     "The current spat you out here."
 
     "You can't move. The roots are wrapped around your legs, your arms, your chest. You can barely breathe."
-
-    # MAJOR MOMENT: The Root-Tangle
-    show major_rhizoma_roots at truecenter with dissolve
-    pause 1.5
-    hide major_rhizoma_roots with dissolve
 
     menu:
         "How do you free yourself?"
@@ -171,6 +179,11 @@ label rhizoma_ch01:
 
     thalloa "You're not from here. I can tell."
 
+    # MAJOR MOMENT: Thalloa pressing her ear against the root
+    show major_rhizoma_thalloa_ears at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_thalloa_ears with dissolve
+
     "She looks up at the roots. She presses her ear against one. She listens."
     "She listens longer than necessary. When she pulls away, her eyes are wider—like she heard something she didn't expect."
 
@@ -202,12 +215,8 @@ label rhizoma_ch01:
     "She leads you through the roots. The path is winding, narrow in places, opening into vast caverns in others."
     "You pass villages carved into the roots—homes built into the wood, glowing with mushroom-light."
 
-    show thalloa at left with dissolve
-
     "You see people. Root-people. They're small, pale, their eyes wide and adapted to darkness."
     "They dress in simple clothes. They don't speak much. They watch you as you pass—suspicious, wary."
-
-    hide thalloa with dissolve
 
     menu:
         "How do you react to their stares?"
@@ -219,17 +228,18 @@ label rhizoma_ch01:
             "You meet their eyes. You don't look away. You're a survivor, not a threat. They shift, uncertain."
         "Ask Thalloa":
             $ rhizoma_stares = "ask"
-            mc "\"Why are they looking at me like that?\""
-
             show thalloa at left with dissolve
+            mc "\"Why are they looking at me like that?\""
             thalloa "They don't see outsiders. They're afraid. But they'll get used to you."
             hide thalloa with dissolve
 
-    show root_dweller at right with dissolve
+    # MAJOR MOMENT: Root-dweller spitting at Thalloa's feet
+    show major_rhizoma_spit at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_spit with dissolve
 
     "A root-dweller, an older man with a scarred face, spits at Thalloa's feet. She doesn't react. She keeps walking."
 
-    hide root_dweller with dissolve
     show thalloa at left with dissolve
 
     mc "Why didn't you say anything?"
@@ -306,11 +316,16 @@ label rhizoma_ch01:
 
     "It's unsettling. He knows something about you. He's not just kind—he's calculating."
 
+    hide merchant with dissolve
+
+    # MAJOR MOMENT: Locked chest with sigil
+    show major_rhizoma_sigil at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_sigil with dissolve
+
     "As you work, you notice a corner of the workshop. A locked chest."
     "A strange symbol carved into the wood—a circle with a line through it."
     "The same symbol from Khionia. But you don't recognize it. Not yet."
-
-    hide merchant with dissolve
 
     jump rhizoma_scene5
 
@@ -373,11 +388,6 @@ label rhizoma_ch01:
                 mc "\"Does it matter? You're getting a good deal.\""
                 "You're deflecting, shifting the focus."
 
-    # MAJOR MOMENT: The Trade
-    show major_rhizoma_trade at truecenter with dissolve
-    pause 1.5
-    hide major_rhizoma_trade with dissolve
-
     "The trade is successful. The merchant praises you."
     "Thalloa smiles, but it's careful. She's watching you, as if she's waiting for something."
 
@@ -417,6 +427,11 @@ label rhizoma_ch01:
 
     "One day, you're sorting mushrooms. You find one you don't recognize."
     "It's beautiful—bright red, covered in tiny gold spots. It looks valuable. You set it aside."
+
+    # MAJOR MOMENT: The poisonous mushroom
+    show major_rhizoma_mushroom at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_mushroom with dissolve
 
     "A nobleman arrives—not the previous one, a different one, older, tired."
     "He's looking for medicine. His wife is ill."
@@ -463,11 +478,6 @@ label rhizoma_ch01:
 
     hide thalloa with dissolve
 
-    # MAJOR MOMENT: The Poison Mushroom
-    show major_rhizoma_poison at truecenter with dissolve
-    pause 1.5
-    hide major_rhizoma_poison with dissolve
-
     "The noble's wife falls ill."
 
     if rhizoma_mistake == "sell":
@@ -501,9 +511,15 @@ label rhizoma_ch01:
     merchant "The outsider didn't know. It was my fault. I left the poison where he could reach it."
 
     hide merchant with dissolve
-    show thalloa at left with dissolve
+
+    # MAJOR MOMENT: Thalloa begging on her knees
+    show major_rhizoma_thalloa_begs at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_thalloa_begs with dissolve
 
     "Thalloa begs him to save you. She's on her knees. She's crying."
+
+    show thalloa at left with dissolve
 
     thalloa "He didn't mean it. He's just new. Please."
 
@@ -622,14 +638,14 @@ label rhizoma_ch01:
 
     thalloa "The tree says you're the key. The rot is spreading because the Heartwood Seed has been moved. Someone took it. And the tree says you know where it is."
 
-    # MAJOR MOMENT: Thalloa's Secret
-    show major_rhizoma_thalloa_secret at truecenter with dissolve
-    pause 1.5
-    hide major_rhizoma_thalloa_secret with dissolve
-
     "You don't remember. But her words echo something—a memory, a dream."
     "The sigil. The circle with the line through it."
     "A chamber of roots and light. A seed, pulsing with warmth."
+
+    # MAJOR MOMENT: Heartwood Seed dream memory
+    show major_rhizoma_heartwood_dream at truecenter with dissolve
+    pause 1.5
+    hide major_rhizoma_heartwood_dream with dissolve
 
     "She adds, her voice dropping:"
 

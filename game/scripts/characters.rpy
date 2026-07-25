@@ -9,6 +9,11 @@
 # narrative canon and is never presented as a choice.
 define protagonist_surname = "Alessios"
 
+# --- The Player Character ---
+# This is the main character. The fullname combines the player's chosen
+# first name (pname) with the fixed surname above.
+define mc = Character("[fullname]", color="#ffffff")
+
 # --- Narrator / unnamed voices used in the Prologue ---
 define guard = Character("A Guard", color="#8a8a8a")
 
