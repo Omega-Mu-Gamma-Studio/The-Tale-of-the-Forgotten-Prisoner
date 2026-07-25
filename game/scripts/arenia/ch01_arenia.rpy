@@ -9,6 +9,70 @@ define aurea = Character("Aurea", color="#d1a24a")
 define merchant = Character("Merchant", color="#c9b98a")
 define guard = Character("Guard", color="#d9d9d9")
 
+# ============================================================
+# Arenia Chapter 1 - Image Definitions with Size Fixes
+# ============================================================
+
+# --- Silhouette BGs (fill the screen completely) ---
+image arenia_bg_beach:
+    "images/silhouettes/arenia/silhouette_arenia_beach.png"
+    fit "cover"
+
+image arenia_bg_desert:
+    "images/silhouettes/arenia/silhouette_arenia_desert.png"
+    fit "cover"
+
+image arenia_bg_caravan:
+    "images/silhouettes/arenia/silhouette_arenia_caravan.png"
+    fit "cover"
+
+image arenia_bg_night:
+    "images/silhouettes/arenia/silhouette_arenia_night.png"
+    fit "cover"
+
+image arenia_bg_camp:
+    "images/silhouettes/arenia/silhouette_arenia_camp.png"
+    fit "cover"
+
+image arenia_bg_morning:
+    "images/silhouettes/arenia/silhouette_arenia_morning.png"
+    fit "cover"
+
+# --- Major Moments (show the whole image, centered) ---
+image arenia_mm_collar:
+    "images/major_moments/arenia/major_arenia_collar.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image arenia_mm_collapse:
+    "images/major_moments/arenia/major_arenia_collapse.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image arenia_mm_merchant_recognition:
+    "images/major_moments/arenia/major_arenia_merchant_recognition.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image arenia_mm_hand_on_sword:
+    "images/major_moments/arenia/major_arenia_hand_on_sword.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image arenia_mm_confession:
+    "images/major_moments/arenia/major_arenia_confession.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+image arenia_mm_collar_adjust:
+    "images/major_moments/arenia/major_arenia_collar_adjust.png"
+    fit "contain"
+    align (0.5, 0.5)
+
+# ============================================================
+# Arenia Chapter 1: "Gold from Sand"
+# ============================================================
+
 label arenia_ch01:
 
     scene black
@@ -20,7 +84,7 @@ label arenia_ch01:
 
     "You're face-down on sand so fine it looks like powdered sunlight. Your skin is raw—salt-crusted, sunburned, bleeding in places. Your clothes are torn rags. You're too weak to stand."
 
-    scene silhouette_arenia_beach
+    scene arenia_bg_beach
     with fade
 
     "You're not on the beach. You're on the edge of the desert. The sea is behind you, vast and grey. The dunes stretch ahead, golden and endless. You can taste salt and dust."
@@ -81,9 +145,16 @@ label arenia_scene2:
 
     "She doesn't answer. Instead, she pulls out an iron collar. It's heavy, cold, and degrading."
 
+    # MAJOR MOMENT: Collar being placed
+    scene black with dissolve
+    show arenia_mm_collar at truecenter with dissolve
+    pause 2.0
+
     aurea "This is your new life. You're my property now. You carry my supplies. You hold my horse. You do what I say."
 
     "She approaches. She's done this before—she knows the motion, the click, the weight. But she hesitates. Just for a second. She looks at you—really looks. Something about you gives her pause. Then she shakes it off. She puts it on."
+
+    hide arenia_mm_collar with dissolve
 
     menu:
         "How do you react to the collar?"
@@ -103,7 +174,7 @@ label arenia_scene2:
 
 label arenia_scene3:
 
-    scene silhouette_arenia_desert
+    scene arenia_bg_desert
     with fade
 
     "She's been tracking something—a caravan, a target. You don't know. She doesn't tell you. You're just following."
@@ -136,9 +207,16 @@ label arenia_scene3:
         aurea "Drink. Slowly. I don't need you dying before you're useful."
         "You drink. It's the best thing you've ever tasted."
     elif arenia_desert == "collapse":
+        # MAJOR MOMENT: Aurea kneeling with waterskin
+        scene black with dissolve
+        show arenia_mm_collapse at truecenter with dissolve
+        pause 2.0
+        
         "She sighs. She kneels beside you. She holds a waterskin to your lips."
         aurea "You're not even useful yet, and you're already a burden."
         "But she helps you. She didn't have to."
+        
+        hide arenia_mm_collapse with dissolve
     else:
         "She watches you. There's a flicker of something in her eyes—surprise, maybe."
         aurea "You're stubborn. That's useful."
@@ -147,7 +225,7 @@ label arenia_scene3:
 
 label arenia_scene4:
 
-    scene silhouette_arenia_caravan
+    scene arenia_bg_caravan
     with fade
 
     "You reach a caravan—a trading post on the edge of the desert. Tents, camels, merchants."
@@ -177,9 +255,16 @@ label arenia_scene4:
 
         merchant "She's killed everyone who's tried to help her. You won't last."
 
+        # MAJOR MOMENT: Merchant recognition
+        scene black with dissolve
+        show arenia_mm_merchant_recognition at truecenter with dissolve
+        pause 2.0
+
         "He looks at you like he's looking at a familiar painting—he knows he's seen it before, but he can't remember where."
 
         merchant "I know you. From somewhere. I've seen your face before. You're not from here. Did you come from the north? The frozen lands?"
+
+        hide arenia_mm_merchant_recognition with dissolve
 
         menu:
             "How do you respond to the merchant?"
@@ -219,7 +304,14 @@ label arenia_scene5:
 
     merchant "I'll give you double her price. She's wasting you."
 
+    # MAJOR MOMENT: Hand on sword
+    scene black with dissolve
+    show arenia_mm_hand_on_sword at truecenter with dissolve
+    pause 2.0
+
     "Aurea's hand moves to her sword. She's not going to let you go—even if she has to kill the merchant to keep you. She doesn't want to lose you."
+
+    hide arenia_mm_hand_on_sword with dissolve
 
     "She looks at you. She's waiting. She wants to see what you'll do."
 
@@ -242,7 +334,7 @@ label arenia_scene5:
 
 label arenia_scene6:
 
-    scene silhouette_arenia_night
+    scene arenia_bg_night
     with fade
 
     "The merchant leaves. The sun sets. The desert cools. You're alone with Aurea. She's quiet. She's watching the stars."
@@ -283,7 +375,7 @@ label arenia_scene6:
 
 label arenia_scene7:
 
-    scene silhouette_arenia_camp
+    scene arenia_bg_camp
     with fade
 
     "You make camp in the desert. Aurea builds a fire. She sleeps close to it, her sword within reach. You sleep on the other side of the fire, the collar heavy on your neck."
@@ -301,6 +393,11 @@ label arenia_scene7:
             "You close your eyes. You dream of the ship. The kraken. The waves."
 
     if arenia_night == "dream":
+        # MAJOR MOMENT: Nightmare confession
+        scene black with dissolve
+        show arenia_mm_confession at truecenter with dissolve
+        pause 2.0
+        
         "You dream of your past. A figure in the shadows. A voice: 'You can't run forever.'"
         "A figure steps forward—a silhouette in the shadows."
 
@@ -315,6 +412,8 @@ label arenia_scene7:
             "Speak":
                 $ arenia_dream = "speak"
                 "'Who are you? What do you want from me?' You're confronting your past."
+        
+        hide arenia_mm_confession with dissolve
 
     "You wake up gasping. The collar is cold against your skin."
 
@@ -339,7 +438,7 @@ label arenia_scene7:
 
 label arenia_scene8:
 
-    scene silhouette_arenia_morning
+    scene arenia_bg_morning
     with fade
 
     "Sunrise. The desert is golden again. Aurea is packing. She looks at you."
@@ -358,11 +457,18 @@ label arenia_scene8:
             $ arenia_morning = "suspicious"
             "'Is it dangerous?' You're cautious."
 
+    # MAJOR MOMENT: Collar adjustment
+    scene black with dissolve
+    show arenia_mm_collar_adjust at truecenter with dissolve
+    pause 2.0
+
     "Aurea steps closer. She reaches for your neck. You flinch."
 
     aurea "Relax. I'm loosening it."
 
     "She adjusts the collar slightly. It's a small act of care—a crack in the power dynamic. You feel your skin breathe. It's not freedom. But it's something."
+
+    hide arenia_mm_collar_adjust with dissolve
 
     aurea "We're going to the city of gold. The Salt Flats. You're going to meet the merchant who owns me. He wants to see you."
 
